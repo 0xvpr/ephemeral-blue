@@ -17,7 +17,7 @@ A DLL injection detector with real-time monitoring capabilities
 #### Windows + CMake
 ```cmd
 cmake.exe -B build
-cmake.exe --build build
+cmake.exe --build build --config Release # debug will fail to compile
 ```
 
 #### Docker
