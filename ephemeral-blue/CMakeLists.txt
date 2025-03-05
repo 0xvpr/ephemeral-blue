@@ -9,6 +9,8 @@ include_directories( ${CMAKE_SOURCE_DIR}/${PROJECT_NAME} )
 add_executable(
     ${PROJECT_NAME}
          main.cpp
+         utility.cpp
+         verifier.cpp
 )
 
 set_target_properties(
@@ -39,17 +41,6 @@ target_compile_options(
         $<$<CXX_COMPILER_ID:GNU>:-ffast-math>
         $<$<CXX_COMPILER_ID:GNU>:-funroll-loops>
         $<$<CXX_COMPILER_ID:GNU>:-fvisibility=hidden>
-        $<$<CXX_COMPILER_ID:AppleClang>:-Ofast>
-        $<$<CXX_COMPILER_ID:AppleClang>:-Wall>
-        $<$<CXX_COMPILER_ID:AppleClang>:-Wextra>
-        $<$<CXX_COMPILER_ID:AppleClang>:-Werror>
-        $<$<CXX_COMPILER_ID:AppleClang>:-Wshadow>
-#       $<$<CXX_COMPILER_ID:AppleClang>:-Wpedantic>
-        $<$<CXX_COMPILER_ID:AppleClang>:-Wconversion>
-        $<$<CXX_COMPILER_ID:AppleClang>:-ffunction-sections>
-        $<$<CXX_COMPILER_ID:AppleClang>:-ffast-math>
-        $<$<CXX_COMPILER_ID:AppleClang>:-funroll-loops>
-        $<$<CXX_COMPILER_ID:AppleClang>:-fPIE>
 )
 
 target_link_libraries(
