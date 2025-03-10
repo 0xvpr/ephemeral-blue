@@ -9,11 +9,8 @@
 #include  "verifier.hpp"
 #include  "utility.hpp"
 
-#ifndef   WIN32_LEAN_AND_MEAN
-#define   WIN32_LEAN_AND_MEAN
 #include  <windows.h>
 #include  <tlhelp32.h>
-#endif // WIN32_LEAN_AND_MEAN
 
 #include  <iostream>
 #include  <memory>

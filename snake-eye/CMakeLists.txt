@@ -1,10 +1,13 @@
-project( ephemeral-blue
-         VERSION        2.0.1
+project( snake-eye
+         VERSION        1.0.0
          LANGUAGES      CXX
 )
 
 include_directories( ${CMAKE_CURRENT_SOURCE_DIR} )
 include_directories( ${CMAKE_SOURCE_DIR}/${PROJECT_NAME} )
+
+add_compile_definitions(VC_EXTRALEAN=1)
+add_compile_definitions(WIN32_LEAN_AND_MEAN=1)
 
 add_executable(
     ${PROJECT_NAME}
@@ -26,6 +29,7 @@ target_compile_options(
         $<$<CXX_COMPILER_ID:MSVC>:/W4>
         $<$<CXX_COMPILER_ID:MSVC>:/WX>
         $<$<CXX_COMPILER_ID:MSVC>:/O2>
+        $<$<CXX_COMPILER_ID:MSVC>:/MT>
         $<$<CXX_COMPILER_ID:GNU>:-Ofast>
         $<$<CXX_COMPILER_ID:GNU>:-Wall>
         $<$<CXX_COMPILER_ID:GNU>:-Wextra>

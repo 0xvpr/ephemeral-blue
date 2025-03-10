@@ -22,10 +22,10 @@ RUN apt-get install -y --no-install-recommends \
 RUN update-ca-certificates
 
 # Create working environment
-WORKDIR /opt/ephemeral-blue
+WORKDIR /opt/snake-eye
 
 # Copy sources
-COPY ephemeral-blue ephemeral-blue
+COPY snake-eye snake-eye
 COPY CMakeLists.txt CMakeLists.txt
 COPY mingw-toolchain.cmake mingw-toolchain.cmake
 
@@ -48,7 +48,7 @@ RUN if getent group $LOCAL_UID > /dev/null; \
         useradd -m -u $LOCAL_UID -g $LOCAL_GID -s /bin/bash $LOCAL_USER; \
     fi
 
-RUN chown -R $LOCAL_USER:$LOCAL_USER /opt/ephemeral-blue
+RUN chown -R $LOCAL_USER:$LOCAL_USER /opt/snake-eye
 
 # Install testing suite
 

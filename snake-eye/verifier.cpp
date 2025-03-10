@@ -1,12 +1,9 @@
 #include  "verifier.hpp"
 
-#ifndef   WIN32_LEAN_AND_MEAN
-#define   WIN32_LEAN_AND_MEAN
 #include  "windows.h"
 #include  "wincrypt.h"
 #include  "wintrust.h"
 #include  "softpub.h"
-#endif // WIN32_LEAN_AND_MEAN
 
 bool verifier::is_verified_digital_sigature(const std::filesystem::path& file_path)
 {
